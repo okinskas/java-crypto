@@ -1,15 +1,15 @@
 package ciphers;
 
-public class Caesar extends Cipher {
+public class CaesarCipher extends Cipher {
 
     private final Integer numericKey;
 
-    public Caesar(Integer numericKey) {
+    public CaesarCipher(Integer numericKey) {
         super("");
         this.numericKey = numericKey;
     }
 
-    public Caesar(Integer numericKey, String alphabet) {
+    public CaesarCipher(Integer numericKey, String alphabet) {
 
         super("", alphabet);
         this.numericKey = numericKey;

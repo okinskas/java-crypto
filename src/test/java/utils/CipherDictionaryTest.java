@@ -1,6 +1,6 @@
 package utils;
 
-import ciphers.Caesar;
+import ciphers.CaesarCipher;
 import org.junit.Test;
 
 public class CipherDictionaryTest {
@@ -9,7 +9,7 @@ public class CipherDictionaryTest {
     public void testNonUniqueAlphabet() {
         boolean exceptionThrown = false;
         try {
-            Caesar caesar = new Caesar(3, "AAAABBBBCCCC");
+            CaesarCipher caesarCipher = new CaesarCipher(3, "AAAABBBBCCCC");
         } catch (NonUniqueAlphabetException e) {
             exceptionThrown = true;
         }
