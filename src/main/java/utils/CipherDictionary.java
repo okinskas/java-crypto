@@ -1,31 +1,36 @@
-package ciphers;
+package utils;
 
 import java.util.HashMap;
 
-class CipherDictionary {
+public class CipherDictionary {
 
-    private String alphabet = "abcdefghijklmnopqrstuvwxyz ";
+    public static final String STANDARD_ALPHABET = "abcdefghijklmnopqrstuvwxyz ";
+    private final String alphabet;
     private final HashMap<Character, Integer> stringIntegerHashMap = new HashMap<>();
     private final HashMap<Integer, Character> integerStringHashMap = new HashMap<>();
 
-    CipherDictionary() {
+    public CipherDictionary() {
+        this.alphabet = STANDARD_ALPHABET;
         populate();
     }
 
-    CipherDictionary(String alphabet) {
+    public CipherDictionary(String alphabet) {
+        if (!CipherUtils.hasOnlyUniqueCharacters(alphabet)) {
+            throw new NonUniqueAlphabetException("Cipher alphabet must be unique.");
+        }
         this.alphabet = alphabet.toLowerCase();
         populate();
     }
 
-    String getAlphabet() {
+    public String getAlphabet() {
         return alphabet;
     }
 
-    Character get(Integer key) {
+    public Character get(Integer key) {
         return integerStringHashMap.get(key);
     }
 
-    Integer get(Character key) {
+    public Integer get(Character key) {
         return stringIntegerHashMap.get(key);
     }
 

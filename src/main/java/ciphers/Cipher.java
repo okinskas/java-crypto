@@ -1,16 +1,18 @@
 package ciphers;
 
+import utils.CipherDictionary;
+
 class Cipher {
 
     final String key;
     final CipherDictionary dictionary;
 
-    public Cipher(String key) {
+    Cipher(String key) {
         this.key = key.toLowerCase();
         dictionary = new CipherDictionary();
     }
 
-    public Cipher(String key, String alphabet) {
+    Cipher(String key, String alphabet) {
         this.key = key.toLowerCase();
         dictionary = new CipherDictionary(alphabet);
     }
@@ -24,11 +26,11 @@ class Cipher {
         return "";
     }
 
-    public String getKey() {
+    String getKey() {
         return key;
     }
 
-    public String getAlphabet() {
+    String getAlphabet() {
         return dictionary.getAlphabet();
     }
 }
