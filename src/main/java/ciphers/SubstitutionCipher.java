@@ -23,8 +23,8 @@ public class SubstitutionCipher extends Cipher {
         StringBuilder cipherText = new StringBuilder();
 
         for (int i = 0; i < plainText.length(); i++) {
-            Integer val = dictionary.get(plainText.charAt(i));
-            cipherText.append(encryptionDictionary.get(val));
+            Integer charKey = dictionary.get(plainText.charAt(i));
+            cipherText.append(encryptionDictionary.get(charKey));
         }
 
         return cipherText.toString();
@@ -33,8 +33,8 @@ public class SubstitutionCipher extends Cipher {
     public String decrypt(String cipherText) {
         StringBuilder plainText = new StringBuilder();
         for (int i = 0; i < cipherText.length(); i++) {
-            Integer val = encryptionDictionary.get(cipherText.charAt(i));
-            plainText.append(dictionary.get(val));
+            Integer charKey = encryptionDictionary.get(cipherText.charAt(i));
+            plainText.append(dictionary.get(charKey));
         }
 
         return plainText.toString();

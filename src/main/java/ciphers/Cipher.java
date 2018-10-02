@@ -2,10 +2,10 @@ package ciphers;
 
 import utils.CipherDictionary;
 
-class Cipher {
+public abstract class Cipher implements CipherInterface {
 
-    final String key;
-    final CipherDictionary dictionary;
+    protected final String key;
+    protected final CipherDictionary dictionary;
 
     Cipher(String key) {
         this.key = key.toLowerCase();
@@ -17,20 +17,11 @@ class Cipher {
         dictionary = new CipherDictionary(alphabet);
     }
 
-    public String encrypt(String plainText) {
-        return "";
-    }
-
-    public String decrypt(String cipherText) {
-
-        return "";
-    }
-
-    String getKey() {
+    public String getKey() {
         return key;
     }
 
-    String getAlphabet() {
+    public String getAlphabet() {
         return dictionary.getAlphabet();
     }
 }

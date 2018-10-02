@@ -15,7 +15,6 @@ public class CaesarCipher extends Cipher {
         this.numericKey = numericKey;
     }
 
-    @Override
     public String encrypt(String plainText) {
 
         StringBuilder cipherText = new StringBuilder();
@@ -32,7 +31,6 @@ public class CaesarCipher extends Cipher {
         return cipherText.toString();
     }
 
-    @Override
     public String decrypt(String cipherText) {
 
         StringBuilder plainText = new StringBuilder();
