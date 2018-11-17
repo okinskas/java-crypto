@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class CipherDictionary {
 
-    public static final String STANDARD_ALPHABET = "abcdefghijklmnopqrstuvwxyz ";
+    public static final String STANDARD_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private final String alphabet;
     private final HashMap<Character, Integer> stringIntegerHashMap = new HashMap<>();
     private final HashMap<Integer, Character> integerStringHashMap = new HashMap<>();

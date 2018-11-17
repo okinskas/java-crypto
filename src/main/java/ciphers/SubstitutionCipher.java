@@ -19,6 +19,7 @@ public class SubstitutionCipher extends Cipher {
         compareAlphabetLengths();
     }
 
+    @Override
     public String encrypt(String plainText) {
         StringBuilder cipherText = new StringBuilder();
 
@@ -30,6 +31,7 @@ public class SubstitutionCipher extends Cipher {
         return cipherText.toString();
     }
 
+    @Override
     public String decrypt(String cipherText) {
         StringBuilder plainText = new StringBuilder();
         for (int i = 0; i < cipherText.length(); i++) {

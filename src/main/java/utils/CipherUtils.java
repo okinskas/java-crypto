@@ -17,4 +17,13 @@ public class CipherUtils {
 
         return !duplicateChar.isPresent();
     }
+
+    public static String getSortedString(String sequence) {
+
+        StringBuilder sortedStringBuilder = new StringBuilder();
+        IntStream characters = sequence.chars().sorted();
+        characters.mapToObj(i -> (char) i)
+                .forEach(sortedStringBuilder::append);
+        return sortedStringBuilder.toString();
+    }
 }
